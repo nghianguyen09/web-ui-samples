@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nghia Nguyen" />
+    <meta name="description" content="A demonstration of using jQuery to dynamically add and remove a textbox" />    
+    <title>A demonstration of using jQuery to dynamically add and remove a textbox</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha256-T/zFmO5s/0aSwc6ics2KLxlfbewyRz6UNw1s3Ppf5gE=" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .row-btn {
+            font-size: 1.1rem !important;
+            font-weight: bold;
+            transition: 0.5s;
+            color: dimgray;
+        }
+        .row-btn:hover {
+            cursor: pointer;
+            color: black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p class="h4">
+            A demonstration of using jQuery to dynamically add and remove a textbox
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="form-row align-items-center">
+            <div class="col-3">
+                <input type="text" class="form-control" placeholder="Input value here..." />
+            </div>
+        </div>
+        
+        <button type="button" class="btn mt-2 pl-0 row-btn row-btn-add"><i class="fa fa-plus my-auto"></i> Add textbox</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script>
+        var maxRow = 100;
+
+        $(document).ready(function () {
+            $('.row-btn-add').click(function () {
+                var totalRow = $('div.form-row').length;
+
+                if (totalRow < maxRow) {
+                    $('div.form-row:last')?.after(
+                        '<div class="form-row mt-1 align-items-center">' +
+                        '<div class="col-3">' +
+                        '<input type="text" class="form-control" placeholder="Input value here..." />' +
+                        '</div>' +
+                        '<div class="col-1">' +
+                        '<span class="row-btn row-btn-delete"><i class="fa fa-times my-auto"></i></span>' +
+                        '</div>' +
+                        '</div>'
+                    );
+
+                    $('div.form-row:last').children('div').children('input').focus();
+                    this.scrollIntoView();
+                }
+            });
+
+            $('div.container').on('click', '.row-btn-delete', function () {
+                $(this).parents('div.form-row').next('div.error-msg').remove();
+                $(this).parents('div.form-row').remove();
+            });
+        });
+    </script>
+</body>
+</html>
