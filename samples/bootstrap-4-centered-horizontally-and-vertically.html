@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nghia Nguyen" />
+    <meta name="description" content="A demonstration of using Bootstrap 4 to center text or element horizontally and vertically" />    
+    <title>A demonstration of using Bootstrap 4 to center text or element horizontally and vertically</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha256-T/zFmO5s/0aSwc6ics2KLxlfbewyRz6UNw1s3Ppf5gE=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .row-btn {
+            font-size: 1.1rem !important;
+            font-weight: bold;
+            transition: 0.5s;
+            color: dimgray;
+        }
+        .row-btn:hover {
+            cursor: pointer;
+            color: black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p class="h4">
+            A demonstration of using Bootstrap 4 to center text or element horizontally and vertically
+        </p>
+    </div>
+
+    <div class="container mt-5">
+        <div class="container d-block border text-center bg-light">
+            <p class="h6 my-2">Align element horizontally and vertically</p>
+        </div>
+
+        <pre class="mt-2">
+            &ltdiv class="d-flex h-100">
+                &ltdiv class="d-flex w-100 justify-content-center align-items-center">
+                    &ltdiv style="height:100px; background-color:red; width:100px;">&lt/div>
+                &lt/div>
+            &lt/div>
+        </pre>
+
+        <div class="container border border-success w-50" style="height:300px;">
+            <div class="d-flex h-100">
+                <div class="d-flex w-100 justify-content-center align-items-center">
+                    <div style="height:100px; background-color:red; width:100px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="container d-block border text-center bg-light">
+            <p class="h6 my-2">Align text horizontally and vertically</p>
+        </div>
+
+        <pre class="mt-2">
+            &ltdiv class="d-flex h-100">
+                &ltdiv class="d-flex w-100 justify-content-center align-self-center">
+                I'm in the middle
+                &lt/div>
+            &lt/div>
+        </pre>
+
+        <div class="container border border-success w-25" style="height: 100px;">
+            <div class="d-flex h-100">
+                <div class="d-flex w-100 justify-content-center align-items-center text-danger">
+                I'm in the middle
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
+        <div class="container d-block border text-center bg-light">
+            <p class="h6 my-2">Align text horizontally and vertically in the whole page view</p>
+        </div>
+
+        <pre class="mt-2">
+            &ltdiv class="vh-100 d-flex justify-content-center align-items-center">
+                &lth4 class="text-danger">Centered horizontally and vertically!&lt/h1>
+            &lt/div>
+        </pre>
+
+
+        <div class="vh-100 d-flex justify-content-center align-items-center">
+            <h4 class="text-danger">Centered horizontally and vertically!</h1>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
